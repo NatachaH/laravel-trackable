@@ -43,15 +43,12 @@ trait Trackable
      */
     public function addTrack($name)
     {
-        // Get the title or name for the description
-
-
         // Create a new Track
         $track = new Track;
         $track->fill([
           'name' => $name,
-          'description' => $description
-        ])
+          'description' => $this->defineDescription()
+        ]);
 
         // If there is an Auth, associate it
         if(Auth::check())

@@ -14,9 +14,10 @@ return [
     'event' => [
       'created'       => 'Created',
       'updated'       => 'Updated',
-      'deleted'       => 'Deleted',
       'restored'      => 'Restored',
-      'force-deleted' => 'Force deleted',
+      'deleted'       => 'Deleted',
+      'soft-deleted'  => 'In the trash',
+      'force-deleted' => 'Deleted',
     ],
 
 ];

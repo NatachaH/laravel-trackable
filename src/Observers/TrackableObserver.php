@@ -40,8 +40,11 @@ class TrackableObserver
         if(
           in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model)) &&
           $model->isForceDeleting()
-        ) { return; }
-        $model->addTrack('deleted');
+        ) {
+            $model->addTrack('soft-deleted');
+        } else {
+            $model->addTrack('deleted');
+        }
     }
 
     /**
