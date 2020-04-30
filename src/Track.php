@@ -26,4 +26,13 @@ class Track extends Model
         return $this->belongsTo('App\User', 'user_id');
     }
 
+    /**
+     * Get the owning trackable model.
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function trackable()
+    {
+        return $this->morphTo();
+    }
+
 }

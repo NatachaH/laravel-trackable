@@ -21,6 +21,12 @@ class TrackableObserver
      */
     public function updated($model)
     {
+        if(
+          in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model)) &&
+          $model->isDirty($model->getDeletedAtColumn()) &&
+          $model->isDirty($model->getUpdatedAtColumn()) &&
+          count($model->getDirty()) == 2
+        ) { return; }
         $model->addTrack('updated');
     }
 
@@ -31,6 +37,10 @@ class TrackableObserver
      */
     public function deleted($model)
     {
+        if(
+          in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model)) &&
+          $model->isForceDeleting()
+        ) { return; }
         $model->addTrack('deleted');
     }
 

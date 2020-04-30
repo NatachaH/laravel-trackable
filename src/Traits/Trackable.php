@@ -16,7 +16,7 @@ trait Trackable
      */
     protected static function bootTrackable()
     {
-        static::observe(TrackableObserver::class);
+        static::observe(\Nh\Trackable\Observers\TrackableObserver::class);
     }
 
     /**
@@ -41,11 +41,11 @@ trait Trackable
      * Add a track.
      * @param string $event
      */
-    private function addTrack($event)
+    public function addTrack($event)
     {
         $this->tracks()->create([
               'event' => $event,
-              'user_id' => Auth::user()->id;
+              'user_id' => Auth::user()->id
         ]);
     }
 
