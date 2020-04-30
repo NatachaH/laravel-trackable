@@ -15,8 +15,9 @@ class CreateTracksTable extends Migration
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('event');
-            $table->morphs('trackable');
+            $table->string('name');
+            $table->string('description');
+            $table->nullableMorphs('trackable');
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('user_id')

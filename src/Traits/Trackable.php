@@ -41,12 +41,40 @@ trait Trackable
      * Add a track.
      * @param string $event
      */
-    public function addTrack($event)
+    public function addTrack($name)
     {
-        $this->tracks()->create([
-              'event' => $event,
-              'user_id' => Auth::user()->id
-        ]);
+        // Get the title or name for the description
+
+
+        // Create a new Track
+        $track = new Track;
+        $track->fill([
+          'name' => $name,
+          'description' => $description
+        ])
+
+        // If there is an Auth, associate it
+        if(Auth::check())
+        {
+          $track->user()->associate(Auth::user());
+        }
+
+        // Save the track
+        $this->tracks()->save($track);
+    }
+
+    private function defineDescription()
+    {
+        if(array_key_exists('title', $this->attributes))
+        {
+          $description = $this->title;
+        } else if(array_key_exists('name', $this->attributes)) {
+          $description = $this->name;
+        } else {
+          $description = null;
+        }
+
+        return $description;
     }
 
 }
