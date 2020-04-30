@@ -23,11 +23,15 @@ class TrackableObserver
     {
         if(
           in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model)) &&
-          $model->isDirty($model->getDeletedAtColumn()) &&
-          $model->isDirty($model->getUpdatedAtColumn()) &&
+          $model->isDirty($model->getDeletedAtColumn()) && $model->isDirty($model->getUpdatedAtColumn()) &&
           count($model->getDirty()) == 2
-        ) { return; }
-        $model->addTrack('updated');
+        ) {
+          $event = 'restored';
+        } else {
+          $event = 'updated';
+        }
+
+        $model->addTrack($event);
     }
 
     /**
@@ -37,33 +41,13 @@ class TrackableObserver
      */
     public function deleted($model)
     {
-        if(
-          in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model)) &&
-          $model->isForceDeleting()
-        ) {
-            $model->addTrack('soft-deleted');
+        if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($model))) {
+            $event = $model->isForceDeleting() ? 'force-deleted' : 'soft-deleted';
         } else {
-            $model->addTrack('deleted');
+            $event = 'deleted';
         }
+
+        $model->addTrack($event);
     }
 
-    /**
-     * Restored a model
-     * @param  Illuminate\Database\Eloquent\Model $model
-     * @return void
-     */
-    public function restored($model)
-    {
-        $model->addTrack('restored');
-    }
-
-    /**
-     * Force deleted a model
-     * @param  Illuminate\Database\Eloquent\Model $model
-     * @return void
-     */
-    public function forceDeleted($model)
-    {
-        $model->addTrack('force-deleted');
-    }
 }

@@ -3,7 +3,7 @@
 namespace Nh\Trackable;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class Track extends Model
 {
