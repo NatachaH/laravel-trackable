@@ -11,13 +11,15 @@ return [
     |
     */
 
+    'last-track' = 'Dernière activité|Dernières activités',
+
     'event' => [
-      'created'       => 'Créé',
-      'updated'       => 'Modifié',
-      'restored'      => 'Restauré',
-      'deleted'       => 'Supprimé',
+      'created'       => 'Création',
+      'updated'       => 'Modification',
+      'restored'      => 'Restauration',
+      'deleted'       => 'Suppression',
       'soft-deleted'  => 'À la poubelle',
-      'force-deleted' => 'Supprimé',
+      'force-deleted' => 'Suppression',
     ],
 
 ];
