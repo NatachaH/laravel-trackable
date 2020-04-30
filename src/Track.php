@@ -35,4 +35,14 @@ class Track extends Model
         return $this->morphTo();
     }
 
+    /**
+     * Get the model name in lowercase.
+     *
+     * @return string
+     */
+    public function getModelAttribute()
+    {
+        return Str::lower(class_basename($this->trackable_type));
+    }
+
 }
