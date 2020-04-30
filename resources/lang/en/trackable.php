@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'last-track' = 'Last activity|Latest activities',
+    'latest' => 'Last activity|Latest activities',
 
     'event' => [
       'created'       => 'Created',
