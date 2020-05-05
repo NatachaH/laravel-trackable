@@ -11,7 +11,9 @@ return [
     |
     */
 
-    'latest' => 'Last activity|Latest activities',
+    'latest-activity-log' => 'Last activity|Latest activities',
+
+    'track' => ':Event <b>:time</b> by <b>:by</b>',
 
     'event' => [
       'created'       => 'Created',
