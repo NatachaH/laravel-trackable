@@ -45,4 +45,24 @@ class Track extends Model
         return Str::lower(class_basename($this->trackable_type));
     }
 
+    /**
+     * Get the user name if exist.
+     *
+     * @return string
+     */
+    public function getUsernameAttribute()
+    {
+        return $this->user ? $this->user->name : '-';
+    }
+
+    /**
+     * Get the time diff from creation date.
+     *
+     * @return string
+     */
+    public function getTimeAttribute()
+    {
+        return $this->created_at->diffForHumans();
+    }
+
 }
