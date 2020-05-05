@@ -18,6 +18,15 @@ class Track extends Model
     ];
 
     /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = [
+      'user'
+    ];
+
+    /**
      * Get the model record associated with the user.
      * @return Illuminate\Database\Eloquent\Collection
      */
