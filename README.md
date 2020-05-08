@@ -31,3 +31,4 @@ The events available for the model are:
 - soft-deleted
 - restored
 - force-deleted
+- saved (For relationship update)
