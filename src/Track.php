@@ -51,7 +51,7 @@ class Track extends Model
      */
     public function getModelAttribute()
     {
-        return Str::lower(class_basename($this->trackable_type));
+        return Str::kebab(class_basename($this->trackable_type));
     }
 
     /**
