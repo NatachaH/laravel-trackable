@@ -22,8 +22,6 @@ use Nh\Trackable\Traits\Trackable;
 use Trackable;
 ```
 
-By default the Track description will be the model column **title**, or **name**. If none of these columns exists, it will be set as NULL.
-
 The events available for the model are:
 - created
 - updated
@@ -32,3 +30,22 @@ The events available for the model are:
 - restored
 - force-deleted
 - saved (For relationship update)
+
+## Customize
+
+You can define the field to use as description:
+*By default the Track description will be the model column title, or name. If none of these columns exists, it will be set as NULL.*
+
+```
+/**
+ * The trackable field to use in description.
+ * @var string
+ */
+protected $trackable = 'type';    
+```
+
+You can also add a custome track for a model:
+
+```
+$model->addTrack('name','description');
+```
