@@ -31,6 +31,12 @@ The events available for the model are:
 - force-deleted
 - saved (For relationship update)
 
+You can retrieve the last track of a model:
+
+```
+$model->last_track;
+```
+
 ## Customize
 
 You can define the field to use as description:
