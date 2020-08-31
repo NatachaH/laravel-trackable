@@ -41,18 +41,15 @@ trait Trackable
      * Add a track.
      * @param string $event
      */
-    public function addTrack($name,$content = null)
+    public function addTrack($event,$comment = null)
     {
         // Create a new Track
         $track = new Track;
 
-        // Define description
-        $description = is_null($content) ? $this->defineDescription() : $content;
-
         // Fill the track
         $track->fill([
-          'name' => $name,
-          'description' => $description
+          'event' => $event,
+          'comment' => $comment
         ]);
 
         // If there is an Auth, associate it
@@ -65,24 +62,6 @@ trait Trackable
         $this->tracks()->save($track);
     }
 
-    /**
-     * Define the default description to use.
-     * @return string
-     */
-    private function defineDescription()
-    {
-        if(!empty($this->trackable) && array_key_exists($this->trackable, $this->attributes)) {
-          $description = $this->attributes[$this->trackable];
-        } else if(array_key_exists('title', $this->attributes)) {
-          $description = $this->title;
-        } else if(array_key_exists('name', $this->attributes)) {
-          $description = $this->name;
-        } else {
-          $description = null;
-        }
-
-        return $description;
-    }
 
     /**
      * Get the last track saved as attribute.

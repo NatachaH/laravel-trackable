@@ -37,21 +37,10 @@ You can retrieve the last track of a model:
 $model->last_track;
 ```
 
-## Customize
+## Add a track
 
-You can define the field to use as description:
-*By default the Track description will be the model column title, or name. If none of these columns exists, it will be set as NULL.*
-
-```
-/**
- * The trackable field to use in description.
- * @var string
- */
-protected $trackable = 'type';    
-```
-
-You can also add a custome track for a model:
+You can add a custome track for a model:
 
 ```
-$model->addTrack('name','description');
+$model->addTrack('event','comment');
 ```
