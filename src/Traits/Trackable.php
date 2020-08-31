@@ -62,14 +62,4 @@ trait Trackable
         $this->tracks()->save($track);
     }
 
-
-    /**
-     * Get the last track saved as attribute.
-     * @return Nh\Trackable\Track
-     */
-    public function getLastTrackAttribute()
-    {
-        return $this->hasTracks() ? $this->tracks->last() : null;
-    }
-
 }

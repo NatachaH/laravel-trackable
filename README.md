@@ -31,16 +31,24 @@ The events available for the model are:
 - force-deleted
 - saved (For relationship update)
 
-You can retrieve the last track of a model:
+You can retrieve the tracks of a model:
 
 ```
-$model->last_track;
+$model->tracks;
 ```
 
 ## Add a track
 
-You can add a custome track for a model:
+You can add a custom track for a model:
 
 ```
 $model->addTrack('event','comment');
+```
+
+## Display a track
+
+You can display the full track sentence:
+
+```
+$track->formated // Return 'Updated <b>3m ago</b> by <b>Natacha</b>'
 ```

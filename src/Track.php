@@ -74,4 +74,14 @@ class Track extends Model
         return $this->created_at->diffForHumans();
     }
 
+    /**
+     * Get the formated track.
+     *
+     * @return string
+     */
+    public function getFormatedAttribute()
+    {
+        return __('trackable.track', ['event' => $this->event,'time' => $this->time, 'by' => $this->username ]);
+    }
+
 }
