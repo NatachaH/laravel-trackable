@@ -50,18 +50,4 @@ class TrackableObserver
         $model->addTrack($event);
     }
 
-    /**
-     * Saved a model
-     * @param  Illuminate\Database\Eloquent\Model $model
-     * @return void
-     */
-    public function saved($model)
-    {
-          // If model is clean, it's a relationship that has been updated
-          if($model->isClean())
-          {
-            $model->addTrack('saved');
-          }
-    }
-
 }
