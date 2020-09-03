@@ -26,6 +26,7 @@ class TrackEvent
     public function handle($event)
     {
           $name = $event->name ?? 'undefined';
-          $event->model->addTrack($name);
+          $comment = $event->comment ?? null;
+          $event->model->addTrack($name,$comment);
     }
 }
