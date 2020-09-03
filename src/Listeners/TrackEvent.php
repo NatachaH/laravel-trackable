@@ -5,9 +5,7 @@ namespace Nh\Trackable\Listeners;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-use Nh\Addressable\Events\AddressEvent;
-
-class TrackAddressListener
+class TrackEvent
 {
     /**
      * Create the event listener.
@@ -25,7 +23,7 @@ class TrackAddressListener
      * @param  object  $event
      * @return void
      */
-    public function handle(AddressEvent $event)
+    public function handle($event)
     {
           $event->model->addTrack($event->name);
     }
