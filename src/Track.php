@@ -32,7 +32,8 @@ class Track extends Model
      */
     public function user()
     {
-        return $this->belongsTo('App\User', 'user_id');
+        $userclass = class_exists('App\Models\User') ? 'App\Models\User' : 'App\User';
+        return $this->belongsTo($userclass, 'user_id');
     }
 
     /**
