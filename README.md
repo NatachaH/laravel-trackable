@@ -55,13 +55,13 @@ $track->formated // Return 'Updated <b>3m ago</b> by <b>Natacha</b>'
 
 ## Event listener
 
-You can track some event by using the listener **TrackEvent**.
+You can track some event by using the listener **AddTrack**.
 
 Add this lines to your property **$listen** in your  **App\Providers\EventServiceProvider.php** :
 
 ```
 MyCustomEvent::class => [
-    \Nh\Trackable\Listeners\TrackEvent::class
+    \Nh\Trackable\Listeners\AddTrack::class
 ]
 ```
 

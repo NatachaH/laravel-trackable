@@ -5,7 +5,7 @@ namespace Nh\Trackable\Listeners;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class TrackEvent
+class AddTrack
 {
     /**
      * Create the event listener.
@@ -25,8 +25,11 @@ class TrackEvent
      */
     public function handle($event)
     {
-          $name = $event->name ?? 'undefined';
-          $comment = $event->comment ?? null;
-          $event->model->addTrack($name,$comment);
+        if(in_array('Nh\Trackable\Traits\Trackable', class_uses($event->model)))
+        {
+            $name = $event->name ?? 'undefined';
+            $comment = $event->comment ?? null;
+            $event->model->addTrack($name,$comment);
+        }
     }
 }
