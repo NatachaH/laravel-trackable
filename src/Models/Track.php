@@ -1,6 +1,6 @@
 <?php
 
-namespace Nh\Trackable;
+namespace Nh\Trackable\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
