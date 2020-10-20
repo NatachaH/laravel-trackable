@@ -26,9 +26,11 @@ class TrackableServiceProvider extends ServiceProvider
 
         // VENDORS
         $this->publishes([
-            __DIR__.'/../resources' => resource_path(),
-            __DIR__.'/../database/migrations/2020_04_29_000000_create_tracks_table.php' => base_path('database/migrations/2020_04_29_000000_create_tracks_table.php')
+            __DIR__.'/../resources' => resource_path()
         ], 'trackable');
+
+        // MIGRATIONS
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations/2020_04_29_000000_create_tracks_table.php');
 
     }
 }

@@ -11,9 +11,6 @@ return [
     |
     */
 
-    'latest' => 'Last activity|Latest activities',
-    'history' => 'History of activities',
-
     'track' => ':Event <b>:time</b> by <b>:by</b>',
 
     'event' => [
@@ -23,7 +20,8 @@ return [
       'deleted'       => 'Deleted',
       'soft-deleted'  => 'In the trash',
       'force-deleted' => 'Deleted',
-      'saved'         => 'Updated'
+      'saved'         => 'Updated',
+      'changed'       => 'Changed'
     ],
 
 ];
