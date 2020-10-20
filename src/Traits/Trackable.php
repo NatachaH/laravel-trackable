@@ -5,7 +5,7 @@ use App;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 
-use Nh\Trackable\Track;
+use Nh\Trackable\Models\Track;
 
 trait Trackable
 {
