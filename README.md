@@ -42,7 +42,7 @@ $model->tracks;
 You can add a custom track for a model:
 
 ```
-$model->addTrack('event','comment');
+$model->addTrack('event','relation','comment');
 ```
 
 ## Display a track
@@ -64,5 +64,3 @@ MyCustomEvent::class => [
     \Nh\Trackable\Listeners\AddTrack::class
 ]
 ```
-
-The event must have a **name** attribute (ex: media.created).

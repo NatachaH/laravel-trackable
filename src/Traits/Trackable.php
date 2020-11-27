@@ -41,7 +41,7 @@ trait Trackable
      * Add a track.
      * @param string $event
      */
-    public function addTrack($event,$comment = null)
+    public function addTrack($event, $relation = null, $comment = null)
     {
         // Create a new Track
         $track = new Track;
@@ -49,6 +49,7 @@ trait Trackable
         // Fill the track
         $track->fill([
           'event' => $event,
+          'relation' => $relation,
           'comment' => $comment
         ]);
 

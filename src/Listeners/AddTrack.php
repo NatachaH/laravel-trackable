@@ -28,8 +28,9 @@ class AddTrack
         if(in_array('Nh\Trackable\Traits\Trackable', class_uses($event->model)))
         {
             $name = $event->name ?? 'undefined';
+            $relation = $event->relation ?? null;
             $comment = $event->comment ?? null;
-            $event->model->addTrack($name,$comment);
+            $event->model->addTrack($name,$relation,$comment);
         }
     }
 }
