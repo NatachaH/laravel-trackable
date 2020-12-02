@@ -82,7 +82,8 @@ class Track extends Model
      */
     public function getFormatedAttribute()
     {
-        return __('trackable.track', ['event' => $this->event,'time' => $this->time, 'by' => $this->username ]);
+        $event = \Lang::has('trackable.event.'.$this->event) ? __('trackable.event.'.$this->event) : $this->event;
+        return __('trackable.track', ['event' => $event,'time' => $this->time, 'by' => $this->username ]);
     }
 
 }
