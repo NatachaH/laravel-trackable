@@ -7,15 +7,6 @@ trait AsTrack
 {
 
       /**
-       * The relationships that should always be loaded.
-       *
-       * @var array
-       */
-      protected $with = [
-        'user'
-      ];
-
-      /**
        * Get the owning trackable model.
        * @return Illuminate\Database\Eloquent\Model
        */
