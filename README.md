@@ -6,7 +6,7 @@ Install the package via composer:
 composer require nh/trackable
 ```
 
-Publish the translation for the trackable:
+Publish the translation and the model for the trackable:
 
 ```
 php artisan vendor:publish --tag=trackable

@@ -26,7 +26,8 @@ class TrackableServiceProvider extends ServiceProvider
 
         // VENDORS
         $this->publishes([
-            __DIR__.'/../resources' => resource_path()
+            __DIR__.'/../resources' => resource_path(),
+            __DIR__.'/Models/Track.php' => app_path('Models/Track.php')
         ], 'trackable');
 
         // MIGRATIONS
