@@ -31,7 +31,7 @@ The events available for the model are:
 - force-deleted
 - saved (For relationship update)
 
-You can retrieve the tracks of a model:
+You can retrieve the tracks (order by date and id) of a model:
 
 ```
 $model->tracks;

@@ -25,7 +25,7 @@ trait Trackable
      */
     public function tracks()
     {
-        return $this->morphMany(Track::class, 'trackable');
+        return $this->morphMany(Track::class, 'trackable')->latest()->orderBy('id','desc');
     }
 
     /**
