@@ -30,6 +30,7 @@ trait Trackable
 
     /**
     * Get the most recent track.
+    * @return App\Models\Track
     */
     public function latest_track()
     {
