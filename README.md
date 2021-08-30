@@ -37,6 +37,13 @@ You can retrieve the tracks (order by date and id) of a model:
 $model->tracks;
 ```
 
+Or you can retrieve the most recent track
+
+```
+$model->latest_track;
+```
+
+
 ## Add a track
 
 You can add a custom track for a model:

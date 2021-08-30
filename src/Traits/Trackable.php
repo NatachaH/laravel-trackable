@@ -29,6 +29,14 @@ trait Trackable
     }
 
     /**
+    * Get the most recent track.
+    */
+    public function latest_track()
+    {
+        return $this->morphOne(Track::class, 'trackable')->latestOfMany();
+    }
+
+    /**
       * Check if the model has some track.
       * @return boolean
       */
