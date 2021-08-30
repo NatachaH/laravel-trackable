@@ -40,7 +40,7 @@ $model->tracks;
 Or you can retrieve the most recent track
 
 ```
-$model->latest_track;
+$model->latestTrack;
 ```
 
 

@@ -32,7 +32,7 @@ trait Trackable
     * Get the most recent track.
     * @return App\Models\Track
     */
-    public function latest_track()
+    public function latestTrack()
     {
         return $this->morphOne(Track::class, 'trackable')->latestOfMany();
     }
