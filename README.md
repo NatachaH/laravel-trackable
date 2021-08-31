@@ -49,7 +49,7 @@ $model->latestTrack;
 You can add a custom track for a model:
 
 ```
-$model->addTrack('event','relation','comment');
+$model->addTrack('event',$relationModel,'comment');
 ```
 
 ## Display a track

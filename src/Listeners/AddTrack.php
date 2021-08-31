@@ -25,11 +25,19 @@ class AddTrack
      */
     public function handle($event)
     {
+
+        // Event should be like:
+        // $event->event (created/updated/deleted)
+        // $event->comment
+        // $event->model (the model who is tracked)
+        // $event->relation (the model in relation)
+
+
         if(in_array('Nh\Trackable\Traits\Trackable', class_uses($event->model)))
         {
-            $name = $event->name ?? 'undefined';
+            $name     = $event->event ?? 'undefined';
             $relation = $event->relation ?? null;
-            $comment = $event->comment ?? null;
+            $comment  = $event->comment ?? null;
             $event->model->addTrack($name,$relation,$comment);
         }
     }

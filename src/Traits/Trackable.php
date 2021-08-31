@@ -57,10 +57,15 @@ trait Trackable
 
         // Fill the track
         $track->fill([
-          'event' => $event,
-          'relation' => $relation,
+          'event'   => $event,
           'comment' => $comment
         ]);
+
+        // If there is a relation model
+        if(!empty($relation))
+        {
+          $track->relation()->associate($relation);
+        }
 
         // If there is an Auth, associate it
         if(Auth::check())

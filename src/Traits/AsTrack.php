@@ -16,6 +16,15 @@ trait AsTrack
       }
 
       /**
+       * Get the relation model.
+       * @return Illuminate\Database\Eloquent\Model
+       */
+      public function relation()
+      {
+          return $this->morphTo();
+      }
+
+      /**
        * Get the model name in lowercase.
        *
        * @return string
@@ -26,13 +35,23 @@ trait AsTrack
       }
 
       /**
+       * Get the model name in lowercase.
+       *
+       * @return string
+       */
+      public function getRelationModelAttribute()
+      {
+          return Str::kebab(class_basename($this->relation_type));
+      }
+
+      /**
        * Get the user name if exist.
        *
        * @return string
        */
       public function getUsernameAttribute()
       {
-          return $this->user ? $this->user->name : '-';
+          return $this->user ? $this->user->name : config('app.name');
       }
 
       /**

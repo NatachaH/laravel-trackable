@@ -16,7 +16,7 @@ class Track extends Model
      * @var array
      */
     protected $fillable = [
-        'event','relation','comment'
+        'event','comment'
     ];
 
     /**
@@ -25,7 +25,7 @@ class Track extends Model
      * @var array
      */
     protected $with = [
-      'user'
+      'user','relation'
     ];
 
     /**
