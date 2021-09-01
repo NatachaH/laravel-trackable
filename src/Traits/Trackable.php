@@ -50,15 +50,16 @@ trait Trackable
      * Add a track.
      * @param string $event
      */
-    public function addTrack($event, $relation = null, $comment = null)
+    public function addTrack($event, $relation = null, $number = null, $comment = null)
     {
         // Create a new Track
         $track = new Track;
 
         // Fill the track
         $track->fill([
-          'event'   => $event,
-          'comment' => $comment
+          'event'        => $event,
+          'relation_nbr' => $number,
+          'comment'      => $comment
         ]);
 
         // If there is a relation model

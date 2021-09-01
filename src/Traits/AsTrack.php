@@ -25,7 +25,7 @@ trait AsTrack
       }
 
       /**
-       * Get the model name in lowercase.
+       * Get the parent model name in lowercase.
        *
        * @return string
        */
@@ -35,7 +35,7 @@ trait AsTrack
       }
 
       /**
-       * Get the model name in lowercase.
+       * Get the relation model name in lowercase.
        *
        * @return string
        */

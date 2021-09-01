@@ -29,7 +29,8 @@ The events available for the model are:
 - soft-deleted
 - restored
 - force-deleted
-- saved (For relationship update)
+- saved
+- changed
 
 You can retrieve the tracks (order by date and id) of a model:
 
@@ -49,7 +50,7 @@ $model->latestTrack;
 You can add a custom track for a model:
 
 ```
-$model->addTrack('event',$relationModel,'comment');
+$model->addTrack('my-event', $relationModel, $numberRelationModelAffected, 'My comment')
 ```
 
 ## Display a track
@@ -65,6 +66,12 @@ $track->formated // Return 'Updated <b>3m ago</b> by <b>Natacha</b>'
 You can track some event by using the listener **AddTrack**.
 
 Add this lines to your property **$listen** in your  **App\Providers\EventServiceProvider.php** :
+
+Your event should return:
+- $event->name as the name of the event (exemple: created)
+- $event->model as the model who is tracked)
+- $event->relation as the model relation (exemple: App\Models\Role)
+- $event->number as the number of relation affected by the event
 
 ```
 MyCustomEvent::class => [

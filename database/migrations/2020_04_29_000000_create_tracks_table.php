@@ -19,6 +19,7 @@ class CreateTracksTable extends Migration
             $table->string('comment')->nullable();
             $table->nullableMorphs('trackable');
             $table->nullableMorphs('relation');
+            $table->integer('relation_nbr')->unsigned()->default(1)->nullable();
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->foreign('user_id')

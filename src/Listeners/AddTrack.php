@@ -2,9 +2,6 @@
 
 namespace Nh\Trackable\Listeners;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
-
 class AddTrack
 {
     /**
@@ -28,17 +25,19 @@ class AddTrack
 
         // Event should be like:
         // $event->name (created/updated/deleted)
-        // $event->comment
         // $event->model (the model who is tracked)
         // $event->relation (the model in relation)
+        // $event->number (number of relation affected)
 
 
         if(in_array('Nh\Trackable\Traits\Trackable', class_uses($event->model)))
         {
-            $name     = $event->name ?? 'undefined';
-            $relation = $event->relation ?? null;
-            $comment  = $event->comment ?? null;
-            $event->model->addTrack($name,$relation,$comment);
+            $name        = $event->name ?? 'undefined';
+            $relation    = $event->relation ?? null;
+            $number      = $event->number ?? 1;
+            $comment     = $event->comment ?? null;
+
+            $event->model->addTrack($name,$relation,$number,$comment);
         }
     }
 }
