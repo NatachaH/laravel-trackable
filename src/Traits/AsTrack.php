@@ -12,7 +12,7 @@ trait AsTrack
        */
       public function trackable()
       {
-          return $this->morphTo();
+          return $this->morphTo()->withTrashed();
       }
 
       /**
@@ -21,7 +21,7 @@ trait AsTrack
        */
       public function relation()
       {
-          return $this->morphTo();
+          return $this->morphTo()->withTrashed();
       }
 
       /**
