@@ -44,6 +44,24 @@ Or you can retrieve the most recent track
 $model->latestTrack;
 ```
 
+## Model
+
+You can retrieve multiple information per track:
+*You can customize the translations, colors and icons via the trackable config file*
+
+```
+$track->event_name;       // The translated name of the event
+$track->event_color;      // The color of the event
+$track->event_icon;       // The icon of the event
+$track->model;            // The clean model name
+$track->model_name;       // The translated model name
+$track->relation_model;   // The clean relation model name
+$track->relation_name;    // The translated relation model name
+$track->relation_icon;    // The icon of the relation model
+$track->username;         // The username
+$track->time;             // The formated time
+$track->formated // Return 'Updated <b>3m ago</b> by <b>Natacha</b>'
+```
 
 ## Add a track
 
@@ -53,13 +71,6 @@ You can add a custom track for a model:
 $model->addTrack('my-event', $relationModel, $numberRelationModelAffected, 'My comment')
 ```
 
-## Display a track
-
-You can display the full track sentence:
-
-```
-$track->formated // Return 'Updated <b>3m ago</b> by <b>Natacha</b>'
-```
 
 ## Event listener
 
