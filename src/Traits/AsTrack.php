@@ -104,7 +104,7 @@ trait AsTrack
        */
       public function getRelationIconAttribute()
       {
-          return config('trackable.relations.'.$this->event.'.icon') ?? config('trackable.relations.default.icon');
+          return config('trackable.relations.'.$this->relation_model.'.icon') ?? config('trackable.relations.default.icon');
       }
 
       /**
