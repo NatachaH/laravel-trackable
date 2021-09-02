@@ -21,7 +21,15 @@ trait AsTrack
        */
       public function relation()
       {
-          return $this->morphTo()->withTrashed();
+          $relation = $this->morphTo();
+          if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($relation)))
+          {
+            // If relation model as soft-delete return with trashed
+            return $relation->withTrashed();
+          } else {
+            // Otherwise return just the relation
+            return $relation;
+          }
       }
 
       /**
