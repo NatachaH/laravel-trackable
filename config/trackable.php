@@ -56,6 +56,10 @@ return [
     'restored' => [
       'icon' => 'time-reverse',
       'color' => 'primary'
+    ],
+    'sorted' => [
+      'icon' => 'swap',
+      'color' => 'primary'
     ]
   ],
 

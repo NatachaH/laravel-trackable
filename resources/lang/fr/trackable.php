@@ -21,7 +21,8 @@ return [
       'soft-deleted'  => 'À la poubelle',
       'force-deleted' => 'Suppression',
       'saved'         => 'Modification',
-      'changed'       => 'Modification'
+      'changed'       => 'Modification',
+      'sorted'        => 'Modification de la position'
     ],
 
 ];

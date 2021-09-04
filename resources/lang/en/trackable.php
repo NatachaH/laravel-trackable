@@ -21,7 +21,8 @@ return [
       'soft-deleted'  => 'In the trash',
       'force-deleted' => 'Deleted',
       'saved'         => 'Updated',
-      'changed'       => 'Changed'
+      'changed'       => 'Changed',
+      'sorted'        => 'Sorted'
     ],
 
 ];
