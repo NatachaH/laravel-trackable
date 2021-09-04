@@ -57,9 +57,9 @@ trait Trackable
 
         // Fill the track
         $track->fill([
-          'event'        => $event,
-          'relation_nbr' => $number,
-          'comment'      => $comment
+          'event'     => $event,
+          'number'    => $number,
+          'comment'   => $comment
         ]);
 
         // If there is a relation model
