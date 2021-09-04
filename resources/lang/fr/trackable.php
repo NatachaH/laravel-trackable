@@ -13,6 +13,8 @@ return [
 
     'track' => ':Event <b>:time</b> par <b>:by</b>',
 
+    'affected' => ':number éléments concernés',
+
     'event' => [
       'created'       => 'Création',
       'updated'       => 'Modification',
