@@ -89,6 +89,9 @@ return [
     ],
     'role' => [
       'icon' => 'key'
+    ],
+    'permission' => [
+      'icon' => 'lock'
     ]
   ]
 
