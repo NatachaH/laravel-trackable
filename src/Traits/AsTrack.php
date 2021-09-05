@@ -2,6 +2,7 @@
 namespace Nh\Trackable\Traits;
 
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 trait AsTrack
 {
@@ -12,15 +13,7 @@ trait AsTrack
        */
       public function trackable()
       {
-          $trackable = $this->morphTo();
-          if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($trackable)))
-          {
-            // If relation model as soft-delete return with trashed
-            return $trackable->withTrashed();
-          } else {
-            // Otherwise return just the relation
-            return $trackable;
-          }
+          return $this->morphTo()->withoutGlobalScope(SoftDeletingScope::class);
       }
 
       /**
@@ -29,15 +22,7 @@ trait AsTrack
        */
       public function relation()
       {
-          $relation = $this->morphTo();
-          if(in_array('Illuminate\Database\Eloquent\SoftDeletes', class_uses($relation)))
-          {
-            // If relation model as soft-delete return with trashed
-            return $relation->withTrashed();
-          } else {
-            // Otherwise return just the relation
-            return $relation;
-          }
+          return $this->morphTo()->withoutGlobalScope(SoftDeletingScope::class);
       }
 
       /**
