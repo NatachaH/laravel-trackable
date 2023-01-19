@@ -16,15 +16,15 @@ return [
     'affected' => ':number éléments concernés',
 
     'event' => [
-      'created'       => 'Création',
-      'updated'       => 'Modification',
-      'restored'      => 'Restauration',
-      'deleted'       => 'Suppression',
-      'soft-deleted'  => 'À la poubelle',
-      'force-deleted' => 'Suppression',
-      'saved'         => 'Modification',
-      'changed'       => 'Modification',
-      'sorted'        => 'Modification de la position'
+        'created' => 'Création',
+        'updated' => 'Modification',
+        'restored' => 'Restauration',
+        'deleted' => 'Suppression',
+        'soft-deleted' => 'À la poubelle',
+        'force-deleted' => 'Suppression',
+        'saved' => 'Modification',
+        'changed' => 'Modification',
+        'sorted' => 'Modification de la position',
     ],
 
 ];

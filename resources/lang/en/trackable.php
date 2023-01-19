@@ -16,15 +16,15 @@ return [
     'affected' => ':number items affected',
 
     'event' => [
-      'created'       => 'Created',
-      'updated'       => 'Updated',
-      'restored'      => 'Restored',
-      'deleted'       => 'Deleted',
-      'soft-deleted'  => 'In the trash',
-      'force-deleted' => 'Deleted',
-      'saved'         => 'Updated',
-      'changed'       => 'Changed',
-      'sorted'        => 'Sorted'
+        'created' => 'Created',
+        'updated' => 'Updated',
+        'restored' => 'Restored',
+        'deleted' => 'Deleted',
+        'soft-deleted' => 'In the trash',
+        'force-deleted' => 'Deleted',
+        'saved' => 'Updated',
+        'changed' => 'Changed',
+        'sorted' => 'Sorted',
     ],
 
 ];
